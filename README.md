@@ -1,0 +1,1 @@
+This is simple node project of user authentication with typescript
