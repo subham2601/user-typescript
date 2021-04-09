@@ -1,23 +1,23 @@
 {
-    "swagger":"2.0",
-    "info":{
-        "host":"http://localhost:8082",
-        "basePath":"/"
+    "swagger": "2.0",
+    "info": {
+        "host": "http://localhost:8082",
+        "basePath": "/"
     },
-    "schemes":[
+    "schemes": [
         "http"
     ],
-    "consumes":[
+    "consumes": [
         "application/json"
     ],
-    "produces":[
+    "produces": [
         "application/json"
     ],
-    "paths":{
-        "/admin/register":{
-            "post":{
-                "summary":"register a new admin",
-                "tags":[
+    "paths": {
+        "/admin/register": {
+            "post": {
+                "summary": "register a new admin",
+                "tags": [
                     "Admin"
                 ],
                 "parameters": [
@@ -48,17 +48,17 @@
                         }
                     }
                 ],
-                "responses":{
-                    "200":{
-                        "description":"ok"
+                "responses": {
+                    "200": {
+                        "description": "ok"
                     }
                 }
             }
         },
-        "/admin/login":{
-            "post":{
-                "summary":"admin login",
-                "tags":[
+        "/admin/login": {
+            "post": {
+                "summary": "admin login",
+                "tags": [
                     "Admin"
                 ],
                 "parameters": [
@@ -85,38 +85,38 @@
                         }
                     }
                 ],
-                "responses":{
-                    "200":{
-                        "description":"ok"
+                "responses": {
+                    "200": {
+                        "description": "ok"
                     }
                 }
             }
         },
-        "/admin/get-agents":{
-            "get":{
-                "summary":"get all agents",
-                "tags":[
+        "/admin/get-agents": {
+            "get": {
+                "summary": "get all agents",
+                "tags": [
                     "Admin"
                 ],
-                "parameters":[
+                "parameters": [
                     {
-                        "name":"Authorization",
-                        "in":"header",
-                        "type":"string",
-                        "required":true
+                        "name": "Authorization",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
                     }
                 ],
-                "responses":{
-                    "200":{
-                        "description":"ok"
+                "responses": {
+                    "200": {
+                        "description": "ok"
                     }
                 }
             }
         },
-        "/agent/register":{
-            "post":{
-                "summary":"register a new agent",
-                "tags":[
+        "/agent/register": {
+            "post": {
+                "summary": "register a new agent",
+                "tags": [
                     "Agent"
                 ],
                 "parameters": [
@@ -147,17 +147,17 @@
                         }
                     }
                 ],
-                "responses":{
-                    "200":{
-                        "description":"ok"
+                "responses": {
+                    "200": {
+                        "description": "ok"
                     }
                 }
             }
         },
-        "/agent/login":{
-            "post":{
-                "summary":"api for agent login",
-                "tags":[
+        "/agent/login": {
+            "post": {
+                "summary": "api for agent login",
+                "tags": [
                     "Agent"
                 ],
                 "parameters": [
@@ -184,12 +184,69 @@
                         }
                     }
                 ],
-                "responses":{
-                    "200":{
-                        "description":"ok"
+                "responses": {
+                    "200": {
+                        "description": "ok"
                     }
                 }
             }
+        },
+    "/agent/update/{id}": {
+        "put": {
+            "summary": "api for agent update",
+            "tags": [
+                "Agent"
+            ],
+            "parameters": [
+                {
+                    "name":"id",
+                    "in":"path",
+                    "type":"string",
+                    "required":true
+                },
+                {
+                    "name": "body",
+                    "in": "body",
+                    "required": true,
+                    "type": "object",
+                    "schema": {
+                        "properties": {
+                            "data": {
+                                "properties": {
+                                   
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "ok"
+                }
+            }
         }
+    },
+    "/agent/delete-agent/{id}": {
+        "delete": {
+            "summary": "api for agent delete",
+            "tags": [
+                "Agent"
+            ],
+            "parameters": [
+                {
+                    "name":"id",
+                    "in":"path",
+                    "type":"string",
+                    "required":true
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "ok"
+                }
+            }
+        }
+    }
 }
 }
